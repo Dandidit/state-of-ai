@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State of AI — the live pulse of the AI world</title>
+<meta name="description" content="A live dashboard tracking trending AI models, GitHub repos, and Hacker News stories, updated continuously.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>📊 State of AI</h1>
+    <p>The live pulse of the AI world — updated every few minutes.</p>
+    <div class="hype-wrap">
+      <div class="hype-label">AI Hype Index</div>
+      <div id="hypeValue" class="hype-value">--</div>
+      <div class="hype-bar"><div id="hypeFill" class="hype-fill"></div></div>
+    </div>
+    <div id="updatedAt" class="updated"></div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>🤗 Trending Hugging Face Models</h2>
+      <div id="models" class="list">Loading...</div>
+    </section>
+
+    <section class="panel">
+      <h2>⭐ Trending AI Repos on GitHub</h2>
+      <div id="repos" class="list">Loading...</div>
+    </section>
+
+    <section class="panel">
+      <h2>💬 Top AI Stories on Hacker News</h2>
+      <div id="stories" class="list">Loading...</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data: Hugging Face, GitHub, Hacker News (via Algolia). Refreshed server-side every ~15 min.</p>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>

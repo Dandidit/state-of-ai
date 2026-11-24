@@ -1,0 +1,122 @@
+:root {
+  --bg: #0b0c10;
+  --card: #15171c;
+  --accent: #6ee7ff;
+  --accent2: #ff6ec7;
+  --text: #f1f1f1;
+  --muted: #9a9aa5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.hero {
+  text-align: center;
+  padding: 48px 16px 28px;
+  background: radial-gradient(circle at top, #1b1e27 0%, var(--bg) 70%);
+}
+.hero h1 {
+  font-size: 2.6rem;
+  margin: 0 0 8px;
+}
+.hero p {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.hype-wrap {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.hype-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hype-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hype-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: #222530;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.hype-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transition: width 0.6s ease;
+}
+.updated {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.panel {
+  margin-bottom: 36px;
+}
+.panel h2 {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.item {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .12s, background .12s;
+}
+.item:hover {
+  transform: translateX(4px);
+  background: #1d2028;
+}
+.item .main {
+  flex: 1;
+  min-width: 0;
+}
+.item .title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item .sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.item .metric {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px 16px;
+  font-size: 0.8rem;
+}
