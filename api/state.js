@@ -38,8 +38,9 @@ export default async function handler(req, res) {
     const totalLikes = models.reduce((s, m) => s + m.likes, 0);
     const totalStars = repos.reduce((s, r) => s + r.stars, 0);
     const totalPoints = stories.reduce((s, h) => s + h.points, 0);
-    const raw = (totalLikes / 300) + (totalStars / 150) + (totalPoints / 40);
-    const hypeIndex = Math.max(1, Math.min(100, Math.round(15 + Math.sqrt(raw) * 9)));
+    // Log-scale each signal so a few mega-star repos don't blow out the index.
+    const signal = Math.log10(totalLikes + 1) + Math.log10(totalStars + 1) + Math.log10(totalPoints + 1);
+    const hypeIndex = Math.max(1, Math.min(100, Math.round(8 + signal * 6)));
 
     res.setHeader('Cache-Control', 's-maxage=900, stale-while-revalidate=1800');
     res.status(200).json({
